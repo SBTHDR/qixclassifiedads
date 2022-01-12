@@ -35,28 +35,31 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div>
-                                        <div class="text-sm font-medium text-gray-900">
-                                            Jane Cooper
+                            @foreach ($categories as $category)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">
+                                                {{ $category->name }}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">category-image-slug</a>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <a href="#" class="text-white px-4 py-2 bg-indigo-500 rounded">Edit</a>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">{{ $category->slug }}</a>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            {{-- <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt=""> --}}
+                                            <img class="h-10 w-10 rounded-full" src="{{ asset('uploads/categories/' . $category->image) }}" alt="">
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-white px-4 py-2 bg-indigo-500 rounded">Edit</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                 
                             <!-- More people... -->
                             </tbody>

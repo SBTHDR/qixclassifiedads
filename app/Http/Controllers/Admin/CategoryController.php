@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -35,9 +37,20 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        dd($request->all());
+        if(!empty($request->image)) {
+            $imageName = time() . '-' . $request->image->getClientOriginalName();
+            // store the file
+            $request->image->storeAs('public/uploads/categories', $imageName);
+
+            Category::create([
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                'image' => $imageName
+            ]);
+            return redirect()->route('categories.index');
+        }
     }
 
     /**
