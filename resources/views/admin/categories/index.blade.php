@@ -51,7 +51,6 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            {{-- <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt=""> --}}
                                             <img class="h-10 w-10 rounded-full" src="{{ asset('uploads/categories/' . $category->image) }}" alt="">
                                         </div>
                                     </td>
@@ -69,6 +68,9 @@
                     </div>
                 </div>
   
+            </div>
+            <div class="mt-5">
+                {{ $categories->links() }}
             </div>
         </div>
     </div>
