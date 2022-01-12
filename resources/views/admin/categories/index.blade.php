@@ -72,4 +72,5 @@
             </div>
         </div>
     </div>
+    @flasher_render
 </x-app-layout>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Flasher\Prime\FlasherInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 
@@ -37,7 +38,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(StoreCategoryRequest $request, FlasherInterface $flasher)
     {
         if(!empty($request->image)) {
             $imageName = time() . '-' . $request->image->getClientOriginalName();
@@ -49,6 +50,7 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->name),
                 'image' => $imageName
             ]);
+            $flasher->addSuccess('Category Created Successfully!');
             return redirect()->route('categories.index');
         }
     }
