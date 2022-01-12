@@ -1,4 +1,4 @@
-<header class="text-gray-600 body-font">
+<header class="text-gray-600 body-font bg-white fixed w-full">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -11,6 +11,13 @@
         <a class="mr-5 hover:text-gray-900 cursor-pointer">Pricing</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer">About</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer">Contact</a>
+        @guest
+        <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900 cursor-pointer">Login</a>
+        <a class="mr-5 hover:text-gray-900 cursor-pointer">register</a>
+        @endguest
+        @auth
+        <a href="{{ route('dashboard') }}" class="mr-5 hover:text-indigo-900 cursor-pointer text-indigo-500 font-bold">{{ Auth::user()->name }}</a>
+        @endauth
       </nav>
       <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Add Listing
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
