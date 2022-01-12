@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Flasher\Prime\FlasherInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -75,9 +76,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -87,9 +88,30 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category, FlasherInterface $flasher)
     {
-        //
+        if(!empty($request->image)) {
+            // Delete the old file
+            Storage::delete('public/uploads/categories/'. $category->image);
+            $imageName = time() . '-' . $request->image->getClientOriginalName();
+            // store the file
+            $request->image->storeAs('public/uploads/categories', $imageName);
+
+            $category->update([
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                'image' => $imageName
+            ]);
+            $flasher->addInfo('Category Updated Successfully!');
+            return redirect()->route('categories.index');
+        } else {
+            $category->update([
+                'name' => $request->name,
+                'slug' => Str::slug($request->name)
+            ]);
+            $flasher->addInfo('Category Updated Successfully!');
+            return redirect()->route('categories.index');
+        }
     }
 
     /**
@@ -98,8 +120,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category, FlasherInterface $flasher)
     {
-        //
+        Storage::delete('public/uploads/categories/'. $category->image);
+        $category->delete();
+
+        $flasher->addInfo('Category Deleted Successfully!');
+        return redirect()->route('categories.index');
     }
 }
