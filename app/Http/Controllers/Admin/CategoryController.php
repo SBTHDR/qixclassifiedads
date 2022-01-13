@@ -44,19 +44,18 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request, FlasherInterface $flasher)
     {
-        if(!empty($request->image)) {
+        if($request->file('image')) {
             $imageName = time() . '-' . $request->image->getClientOriginalName();
             // store the file
             $request->image->storeAs('public/uploads/categories', $imageName);
-
-            Category::create([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'image' => $imageName
-            ]);
-            $flasher->addSuccess('Category Created Successfully!');
-            return redirect()->route('categories.index');
         }
+        Category::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'image' => $imageName
+        ]);
+        $flasher->addSuccess('Category Created Successfully!');
+        return redirect()->route('categories.index');
     }
 
     /**
