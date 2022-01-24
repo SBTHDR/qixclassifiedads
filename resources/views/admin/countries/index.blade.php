@@ -62,8 +62,8 @@
                                             </div>
                                         </td>
                                         <td class="flex px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            {{-- <a href="{{ route('add_state', $country->id) }}"
-                                                class="text-indigo-600 hover:text-indigo-900 px-2">Add State</a> --}}
+                                            <a href="{{ route('add_state', $country->id) }}"
+                                                class="text-indigo-600 hover:text-indigo-900 px-2">Add State</a>
                                             <a href="{{ route('countries.edit', $country->id) }}"
                                                 class="text-indigo-600 hover:text-indigo-900 px-2">Edit</a>
                                             <form method="POST"

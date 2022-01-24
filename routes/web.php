@@ -31,6 +31,8 @@ Route::resource('/categories', CategoryController::class);
 Route::resource('/subcategories', SubCategoryController::class);
 Route::resource('/childcategories', ChildCategoryController::class);
 
-Route::resource('countries', CountryController::class);
-Route::resource('states', StateController::class);
-Route::resource('cities', CityController::class);
+Route::resource('/countries', CountryController::class);
+Route::get('/countries/{country}/add-state', [CountryController::class, 'add_state'])->name('add_state');
+Route::post('/countries/{country}/add-state', [CountryController::class, 'add_state_store'])->name('add_state.store');
+Route::resource('/states', StateController::class);
+Route::resource('/cities', CityController::class);
