@@ -56,19 +56,19 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('countries.index') }}">
                                     {{ __('Country') }}
                                 </x-jet-dropdown-link>
 
                                 <div class="border-t border-gray-100"></div>
 
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('states.index') }}">
                                     {{ __('State') }}
                                 </x-jet-dropdown-link>
 
                                 <div class="border-t border-gray-100"></div>
 
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-jet-dropdown-link href="{{ route('cities.index') }}">
                                     {{ __('City') }}
                                 </x-jet-dropdown-link>
 
