@@ -137,7 +137,9 @@
                                 @livewire('depended-edit-country', ['country' => $listing->country_id, 'state' =>
                                 $listing->state_id, 'city' => $listing->city_id])
 
-                                @livewire('image-preview')
+                                @livewire('edit-image-preview', ['oldFeaturedImage' => $listing->featured_image,
+                                'oldImageOne' => $listing->image_one, 'oldImageTwo' => $listing->image_two,
+                                'oldImageThree' => $listing->image_three])
                             <div class="flex flex-wrap -m-2">
                                 <div class="p-2 w-full">
                                     <button type="submit"
