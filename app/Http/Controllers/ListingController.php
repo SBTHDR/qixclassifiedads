@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Flasher\Prime\FlasherInterface;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreListingRequest;
 
 class ListingController extends Controller
@@ -36,7 +38,7 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreListingRequest $request)
+    public function store(StoreListingRequest $request, FlasherInterface $flasher)
     {
         
         $featured_image = $request->file('featured_image')->store('public/uploads/listings');
@@ -68,6 +70,7 @@ class ListingController extends Controller
             'image_three' => $image_three,
         ]);
 
+        $flasher->addSuccess('Listing Created Successfully!');
         return redirect()->route('listings.index');
     }
 
@@ -100,7 +103,7 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreListingRequest $request, $id)
+    public function update(StoreListingRequest $request, $id, FlasherInterface $flasher)
     {
         $listing = Listing::findOrFail($id);
 
@@ -148,6 +151,7 @@ class ListingController extends Controller
             'image_three' => $image_three,
         ]);
 
+        $flasher->addInfo('Listing Updated Successfully!');
         return redirect()->route('listings.index');
     }
 
@@ -157,8 +161,16 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Listing $listing, FlasherInterface $flasher)
     {
-        //
+        Storage::delete($listing->featured_image);
+        Storage::delete($listing->image_one);
+        Storage::delete($listing->image_two);
+        Storage::delete($listing->image_three);
+
+        $listing->delete();
+
+        $flasher->addInfo('Listing Deleted Successfully!');
+        return redirect()->route('listings.index');
     }
 }
