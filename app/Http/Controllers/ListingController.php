@@ -100,9 +100,55 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreListingRequest $request, $id)
     {
-        //
+        $listing = Listing::findOrFail($id);
+
+        $featured_image = $listing->featured_image;
+        $image_one = $listing->image_one;
+        $image_two = $listing->image_two;
+        $image_three = $listing->image_three;
+
+        if ($request->hasFile('featured_image')) {
+            $featured_image = $request->file('featured_image')->store('public/uploads/listings');
+        }
+
+        if ($request->hasFile('image_one')) {
+            $image_one = $request->file('image_one')->store('public/uploads/listings');
+        }
+
+        if ($request->hasFile('image_two')) {
+            $image_two = $request->file('image_two')->store('public/uploads/listings');
+        }
+
+        if ($request->hasFile('image_three')) {
+            $image_three = $request->file('image_three')->store('public/uploads/listings');
+        }
+    
+        $listing->update([
+            'category_id' => $request->category_id,
+            'sub_category_id' => $request->sub_category_id,
+            'child_category_id' => $request->child_category_id,
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'description' => $request->description,
+            'price' => $request->price,
+            'price_negotiable' => $request->price_negotiable,
+            'condition' => $request->condition,
+            'location' => $request->location,
+            'country_id' => $request->country_id,
+            'state_id' => $request->state_id,
+            'city_id' => $request->city_id,
+            'phone_number' => $request->phone_number,
+            'is_published' => $request->is_published,
+            'featured_image' => $featured_image,
+            'image_one' => $image_one,
+            'image_two' => $image_two,
+            'image_three' => $image_three,
+        ]);
+
+        return redirect()->route('listings.index');
     }
 
     /**
