@@ -28,7 +28,15 @@
                                             </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Slug
+                                                Price
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Prie Condition
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Phone
                                             </th>
                                             {{-- <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -53,9 +61,36 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ $listing->price }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ $listing->price_negotiable }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ $listing->phone_number }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            {{-- <td class="px-6 py-4 whitespace-nowrap">
                                                 <a href="#"
                                                     class="text-indigo-600 hover:text-indigo-900">{{ $listing->slug }}</a>
-                                            </td>
+                                            </td> --}}
                                             {{-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <div class="flex-shrink-0 h-10 w-10">
                                                     <img class="h-10 w-10 rounded-full"
