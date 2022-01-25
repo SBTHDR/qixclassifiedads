@@ -131,9 +131,11 @@
                                 </div>
                             </div>                  
                             
-                                @livewire('depended-category')
+                                @livewire('depended-edit-category', ['category' => $listing->category_id, 'subCategory'
+                                => $listing->sub_category_id, 'childCategory' => $listing->child_category_id])
                             
-                                @livewire('depended-country')
+                                @livewire('depended-edit-country', ['country' => $listing->country_id, 'state' =>
+                                $listing->state_id, 'city' => $listing->city_id])
 
                                 @livewire('image-preview')
                             <div class="flex flex-wrap -m-2">
