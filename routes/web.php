@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,5 @@ Route::get('/countries/{country}/add-state', [CountryController::class, 'add_sta
 Route::post('/countries/{country}/add-state', [CountryController::class, 'add_state_store'])->name('add_state.store');
 Route::resource('/states', StateController::class);
 Route::resource('/cities', CityController::class);
+
+Route::resource('/listings', ListingController::class);
