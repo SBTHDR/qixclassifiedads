@@ -92,9 +92,9 @@
                                                     class="text-indigo-600 hover:text-indigo-900">{{ $listing->slug }}</a>
                                             </td> --}}
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
-                                                        src="{{ asset($listing->featured_image) }}"
+                                                <div class="flex-shrink-0 h-20 w-20">
+                                                    <img class="h-20 w-20"
+                                                        src="{{ Storage::url($listing->featured_image) }}"
                                                         alt="">
                                                 </div>
                                             </td>
