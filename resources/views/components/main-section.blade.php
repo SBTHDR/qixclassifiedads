@@ -12,6 +12,8 @@
         {{ $slot }}
         
       </div>
-      <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Pricing</button>
+      <div class="text-center mt-16">
+        <a href="{{ route('pricing') }}" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Pricing</a>
+      </div>
     </div>
-  </section>
+</section>

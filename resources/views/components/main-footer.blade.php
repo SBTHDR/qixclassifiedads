@@ -70,7 +70,7 @@
               <a class="text-white hover:text-gray-300">HQ: 722 Red Maple Drive, Mira Loma, CA, California.</a>
             </li>
             <li>
-              <a class="text-white hover:text-gray-300">Mail: qixClassifiedAds@info.Com</a>
+              <a class="text-white hover:text-gray-300">Mail: qixclassifiedads@info.com</a>
             </li>
             
           </nav>

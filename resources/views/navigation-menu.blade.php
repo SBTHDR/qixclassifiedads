@@ -18,23 +18,6 @@
                 </div>
 
                 @role('admin')
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
-                        {{ __('Categories') }}
-                    </x-jet-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('subcategories.index') }}" :active="request()->routeIs('subcategories.index')">
-                        {{ __('Sub Categories') }}
-                    </x-jet-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('childcategories.index') }}" :active="request()->routeIs('childcategories.index')">
-                        {{ __('Child Categories') }}
-                    </x-jet-nav-link>
-                </div> --}}
 
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                     <div class="ml-3 relative">
