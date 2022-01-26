@@ -7,7 +7,7 @@
         <a href="/"><span class="ml-3 text-xl">QixClassifiedAdd</span></a> 
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900 cursor-pointer">Adds</a>
+        <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('all-listings') }}">All Listings</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer">Pricing</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer">About</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer">Contact</a>
