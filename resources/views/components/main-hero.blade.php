@@ -1,5 +1,7 @@
-<div class="w-full bg-center bg-cover h-[32rem]" style="background-image: url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-    <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
+{{-- <div class="w-full bg-center bg-cover h-[32rem]" style="background-image: url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);"> --}}
+<div class="w-full bg-center bg-cover h-[50rem]"
+    style="background-image: linear-gradient(90deg, rgba(202,176,255,1) 0%, rgba(162,123,249,1) 51%, rgba(123,125,249,1) 100%);">
+    <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-10">
         <div class="text-center" id="form-filter">
             {{-- Search Box --}}
             <div class="flex items-center justify-center w-full h-full">
@@ -9,65 +11,54 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
                                     <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                                        <svg class="fill-current text-gray-800 mr-2 w-5"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                            height="24">
-                                            <path class="heroicon-ui"
-                                                d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
-                                        </svg>
-                                        <input type="text" placeholder="Title..." name="title" id="title"
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                          </svg>
+                                        <input type="text" placeholder="Filter by Title..." name="title" id="title"
                                             class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
                                     </div>
                                     <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                                        <svg class="fill-current text-gray-800 mr-2 w-5"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                            height="24">
-                                            <path class="heroicon-ui"
-                                                d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zM5.68 7.1A7.96 7.96 0 0 0 4.06 11H5a1 1 0 0 1 0 2h-.94a7.95 7.95 0 0 0 1.32 3.5A9.96 9.96 0 0 1 11 14.05V9a1 1 0 0 1 2 0v5.05a9.96 9.96 0 0 1 5.62 2.45 7.95 7.95 0 0 0 1.32-3.5H19a1 1 0 0 1 0-2h.94a7.96 7.96 0 0 0-1.62-3.9l-.66.66a1 1 0 1 1-1.42-1.42l.67-.66A7.96 7.96 0 0 0 13 4.06V5a1 1 0 0 1-2 0v-.94c-1.46.18-2.8.76-3.9 1.62l.66.66a1 1 0 0 1-1.42 1.42l-.66-.67zM6.71 18a7.97 7.97 0 0 0 10.58 0 7.97 7.97 0 0 0-10.58 0z" />
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                          </svg>
                                         <select class="bg-gray-300 w-full focus:outline-none text-gray-700"
                                             id="category">
                                             <option selected value="">Categories</option>
 
                                             @foreach (App\Models\Category::all() as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}
-                                                </option>
+                                            <option value="{{ $category->id }}">{{ $category->name }}
+                                            </option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
-                                    <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                                        <svg class="fill-current text-gray-800 mr-2 w-5"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                            height="24">
-                                            <path class="heroicon-ui"
-                                                d="M14 5.62l-4 2v10.76l4-2V5.62zm2 0v10.76l4 2V7.62l-4-2zm-8 2l-4-2v10.76l4 2V7.62zm7 10.5L9.45 20.9a1 1 0 0 1-.9 0l-6-3A1 1 0 0 1 2 17V4a1 1 0 0 1 1.45-.9L9 5.89l5.55-2.77a1 1 0 0 1 .9 0l6 3A1 1 0 0 1 22 7v13a1 1 0 0 1-1.45.89L15 18.12z" />
-                                        </svg>
+                                    <div class="flex border rounded bg-gray-300 items-center p-2 ">                                
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                          </svg>
                                         <select class="bg-gray-300 w-full focus:outline-none text-gray-700"
                                             id="country">
                                             <option selected value="">Countries</option>
                                             @foreach (App\Models\Country::all() as $country)
-                                                <option value="{{ $country->id }}">{{ $country->name }}
-                                                </option>
+                                            <option value="{{ $country->id }}">{{ $country->name }}
+                                            </option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="flex border rounded bg-gray-300 items-center p-2 ">
-                                        <svg class="fill-current text-gray-800 mr-2 w-5"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                            height="24">
-                                            <path class="heroicon-ui"
-                                                d="M13.04 14.69l1.07-2.14a1 1 0 0 1 1.2-.5l6 2A1 1 0 0 1 22 15v5a2 2 0 0 1-2 2h-2A16 16 0 0 1 2 6V4c0-1.1.9-2 2-2h5a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.5 1.21L9.3 10.96a10.05 10.05 0 0 0 3.73 3.73zM8.28 4H4v2a14 14 0 0 0 14 14h2v-4.28l-4.5-1.5-1.12 2.26a1 1 0 0 1-1.3.46 12.04 12.04 0 0 1-6.02-6.01 1 1 0 0 1 .46-1.3l2.26-1.14L8.28 4zm7.43 5.7a1 1 0 1 1-1.42-1.4L18.6 4H16a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V5.41l-4.3 4.3z" />
-                                        </svg>
-                                        <input type="text" id="maxPrice" name="maxPrice" placeholder="Max Price..."
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                          </svg>
+                                        <input type="text" id="maxPrice" name="maxPrice" placeholder="Filter by Max Price..."
                                             class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
                                     </div>
                                 </div>
                             </div>
                             <div class="flex justify-center mt-3">
                                 <button type="button" id="filter"
-                                    class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Filter</button>
+                                    class="p-2 border w-2/4 rounded-md bg-indigo-500 text-white font-bold">Filter Ads</button>
                             </div>
                         </form>
                     </div>
@@ -77,4 +68,3 @@
         </div>
     </div>
 </div>
-        

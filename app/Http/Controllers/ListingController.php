@@ -18,7 +18,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::paginate(5);
+        $listings = Listing::paginate(3);
         return view('listings.index', compact('listings'));
     }
 
@@ -40,7 +40,6 @@ class ListingController extends Controller
      */
     public function store(StoreListingRequest $request, FlasherInterface $flasher)
     {
-        
         $featured_image = $request->file('featured_image')->store('public/uploads/listings');
         $image_one = $request->file('image_one')->store('public/uploads/listings');
         $image_two = $request->file('image_two')->store('public/uploads/listings');

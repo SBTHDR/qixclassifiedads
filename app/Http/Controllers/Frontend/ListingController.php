@@ -27,8 +27,8 @@ class ListingController extends Controller
 
     public function welcome()
     {
-        $categories = Category::all();
-        $featured_ads = Listing::where('is_published', true)->get();
+        $categories = Category::take(6)->get();
+        $featured_ads = Listing::take(3)->latest()->where('is_published', true)->get();
 
         return view('welcome', compact('categories', 'featured_ads'));
     }

@@ -11,14 +11,16 @@
                 <div class="flex flex-wrap -m-4">
                     @foreach ($listings as $listing)
                         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a class="block relative h-48 rounded overflow-hidden">
-                                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/420x260">
+                            <a class="block relative h-48 rounded overflow-hidden cursor-pointer">
+                                {{-- <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                                    src="https://dummyimage.com/420x260"> --}}
+                                    <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                                    src="{{ Storage::url($listing->featured_image) }}" width="260">
                             </a>
                             <div class="mt-4">
-                                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 cursor-pointer">
                                     {{ $listing->category->name }}</h3>
-                                <h2 class="text-gray-900 title-font text-lg font-medium">{{ $listing->title }}</h2>
+                                <h2 class="text-gray-900 title-font text-lg font-medium cursor-pointer">{{ $listing->title }}</h2>
                                 <p class="mt-1">$ {{ $listing->price }}</p>
                             </div>
                         </div>
