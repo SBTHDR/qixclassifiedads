@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ChildCategoryController;
 use App\Http\Controllers\Admin\CityController;
@@ -25,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
 Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+});
 
 Route::resource('/categories', CategoryController::class);
 Route::resource('/subcategories', SubCategoryController::class);
