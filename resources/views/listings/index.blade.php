@@ -50,68 +50,70 @@
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
                                         @foreach ($listings as $listing)
-                                        <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div>
-                                                        <div class="text-sm font-medium text-gray-900">
-                                                            {{ $listing->title }}
+                                            @if (auth()->user()->id === $listing->user->id)
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div class="text-sm font-medium text-gray-900">
+                                                                    {{ $listing->title }}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div>
-                                                        <div class="text-sm font-medium text-gray-900">
-                                                            {{ $listing->price }}
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div class="text-sm font-medium text-gray-900">
+                                                                    {{ $listing->price }}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div>
-                                                        <div class="text-sm font-medium text-gray-900">
-                                                            {{ $listing->price_negotiable }}
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div class="text-sm font-medium text-gray-900">
+                                                                    {{ $listing->price_negotiable }}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div>
-                                                        <div class="text-sm font-medium text-gray-900">
-                                                            {{ $listing->phone_number }}
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div class="text-sm font-medium text-gray-900">
+                                                                    {{ $listing->phone_number }}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            {{-- <td class="px-6 py-4 whitespace-nowrap">
-                                                <a href="#"
-                                                    class="text-indigo-600 hover:text-indigo-900">{{ $listing->slug }}</a>
-                                            </td> --}}
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <div class="flex-shrink-0 h-20 w-20">
-                                                    <img class="h-20 w-20"
-                                                        src="{{ Storage::url($listing->featured_image) }}"
-                                                        alt="">
-                                                </div>
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium flex items-center gap-2">
-                                                <a href="{{ route('listings.edit', $listing->id) }}"
-                                                    class="text-white px-4 py-2 bg-indigo-500 rounded">Edit</a>
-                                                <form action="{{ route('listings.destroy', $listing->id) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="text-white px-4 py-2 bg-red-400 rounded show_confirm">
-                                                        {{ __('Delete') }}
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                                    </td>
+                                                    {{-- <td class="px-6 py-4 whitespace-nowrap">
+                                                        <a href="#"
+                                                            class="text-indigo-600 hover:text-indigo-900">{{ $listing->slug }}</a>
+                                                    </td> --}}
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                                        <div class="flex-shrink-0 h-20 w-20">
+                                                            <img class="h-20 w-20"
+                                                                src="{{ Storage::url($listing->featured_image) }}"
+                                                                alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm font-medium flex items-center gap-2">
+                                                        <a href="{{ route('listings.edit', $listing->id) }}"
+                                                            class="text-white px-4 py-2 bg-indigo-500 rounded">Edit</a>
+                                                        <form action="{{ route('listings.destroy', $listing->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="text-white px-4 py-2 bg-red-400 rounded show_confirm">
+                                                                {{ __('Delete') }}
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endif
                                         @endforeach
 
                                         <!-- More people... -->

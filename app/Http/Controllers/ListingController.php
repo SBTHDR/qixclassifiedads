@@ -18,7 +18,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::paginate(10);
+        $listings = Listing::paginate(5);
         return view('listings.index', compact('listings'));
     }
 
