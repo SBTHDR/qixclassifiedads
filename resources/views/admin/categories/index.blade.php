@@ -58,7 +58,7 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded-full"
+                                                    <img class="h-10 w-10"
                                                         src="{{ asset('uploads/categories/' . $category->image) }}"
                                                         alt="">
                                                 </div>
