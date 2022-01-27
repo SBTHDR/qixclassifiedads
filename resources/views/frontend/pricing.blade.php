@@ -3,9 +3,9 @@
         <x-main-header></x-main-header>
     </x-slot>
     
-    <section class="m-2 p-2" id="list-listings">
-        <section class="text-gray-600 body-font overflow-hidden mt-10">
-            <div class="container px-5 py-24 mx-auto">
+    <section>
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="container px-5 py-24 mx-auto mt-10">
               <div class="flex flex-col text-center w-full mb-20">
                 <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Our Pricing</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">QixClassifiedAds offers classified Ads from over 1218+ Classified Listings</p>

@@ -26,18 +26,20 @@
         <x-main-featured>
             @foreach ($featured_ads as $featured_ad)
                 <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
-                    <a class="block relative h-48 rounded overflow-hidden cursor-pointer">
+                    <a href="{{ route('all-listings.show', $featured_ad->id) }}" class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
                         src="{{ Storage::url($featured_ad->featured_image) }}" width="260">
                     </a>
                     <div class="flex-grow mt-3">
-                    <p class="text-gray-900 text-lg title-font font-medium mb-3 cursor-pointer ">{{ $featured_ad->title }}</p>
+                    <a href="{{ route('all-listings.show', $featured_ad->id) }}">
+                        <p class="text-gray-900 text-lg title-font font-medium mb-3 cursor-pointer ">{{ $featured_ad->title }}</p>
+                    </a>
                     </div>
                     <div class="flex gap-2">
                         <h2 class="leading-relaxed text-base cursor-pointer">Type: {{ $featured_ad->condition }}</h2>
                         <h2 class="leading-relaxed text-base cursor-pointer">Location: {{ $featured_ad->location }}</h2>
                     </div>
-                    <a class="mt-3 text-indigo-500 inline-flex items-center cursor-pointer">Price: $ {{ $featured_ad->price }}
+                    <a href="{{ route('all-listings.show', $featured_ad->id) }}" class="mt-3 text-indigo-500 inline-flex items-center cursor-pointer">Price: $ {{ $featured_ad->price }}
                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>

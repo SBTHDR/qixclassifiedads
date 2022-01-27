@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
 Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
+Route::get('/all-listings/{listing}', [FrontendListingController::class, 'show'])->name('all-listings.show');
 
 Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');

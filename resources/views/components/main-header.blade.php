@@ -7,6 +7,7 @@
         <a href="/"><span class="ml-3 text-xl">QixClassifiedAds</span></a> 
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('welcome') }}">Home</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('all-listings') }}">All Listings</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('pricing') }}">Pricing</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('about') }}">About</a>

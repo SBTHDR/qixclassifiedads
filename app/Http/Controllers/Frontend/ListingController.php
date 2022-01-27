@@ -32,4 +32,11 @@ class ListingController extends Controller
 
         return view('welcome', compact('categories', 'featured_ads'));
     }
+
+    public function show($id)
+    {
+        $listing = Listing::findOrFail($id);
+
+        return view('frontend.show-listing', compact('listing'));
+    }
 }
