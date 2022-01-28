@@ -33,7 +33,7 @@
                   </div>
                   <div class="flex">
                     <span class="title-font font-medium text-2xl text-gray-900">Price: ${{ $listing->price }}</span>
-                    <a href="{{ route('contact') }}" class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Contact</a>
+                    <a href="{{ route('contact', $listing->id) }}" class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Contact</a>
                     
                   </div>
                 </div>

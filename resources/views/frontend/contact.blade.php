@@ -11,7 +11,7 @@
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We implement chat feature between Sellers & Buyers. Send Us A Message.</p>
               </div>
               <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <form action="{{ route('listing-inquiry') }}" method="POST" class="flex flex-wrap -m-2">
+                <form action="{{ route('listing-inquiry', $listing->id) }}" method="POST" class="flex flex-wrap -m-2">
                   @csrf
                   <div class="p-2 w-1/2">
                     <div class="relative">

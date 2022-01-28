@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use App\Models\Listing;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -12,9 +14,10 @@ class PageController extends Controller
         return view('frontend.pricing');
     }
 
-    public function contact()
+    public function contact($id)
     {
-        return view('frontend.contact');
+        $listing = Listing::findOrFail($id);
+        return view('frontend.contact', compact('listing'));
     }
 
     public function about()

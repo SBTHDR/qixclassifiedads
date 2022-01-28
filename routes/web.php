@@ -29,10 +29,10 @@ Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
 Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
 Route::get('/all-listings/{listing}', [FrontendListingController::class, 'show'])->name('all-listings.show');
 
-Route::post('/listing-inquiry', [ContactController::class, 'listingInquiry'])->name('listing-inquiry');
+Route::post('/listing-inquiry/{id}', [ContactController::class, 'listingInquiry'])->name('listing-inquiry');
 
 Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/contact/{id}', [PageController::class, 'contact'])->name('contact');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {

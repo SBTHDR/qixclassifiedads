@@ -11,7 +11,6 @@
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('all-listings') }}">All Listings</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('pricing') }}">Pricing</a>
         <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('about') }}">About</a>
-        <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('contact') }}">Contact</a>
         @guest
         <a href="{{ route('login') }}" class="mr-5 hover:text-gray-900 cursor-pointer">Login</a>
         <a href="{{ route('register') }}" class="mr-5 hover:text-gray-900 cursor-pointer">register</a>
