@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Frontend\ListingController as FrontendListingController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\ListingController;
@@ -27,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
 Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
 Route::get('/all-listings/{listing}', [FrontendListingController::class, 'show'])->name('all-listings.show');
+
+Route::post('/listing-inquiry', [ContactController::class, 'listingInquiry'])->name('listing-inquiry');
 
 Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
