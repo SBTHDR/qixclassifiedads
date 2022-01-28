@@ -56,6 +56,14 @@
                 document.location.href = href;
             }
             document.getElementById("filter").addEventListener("click", filterResults);
+            
+            document.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("filter").click();
+                }
+            });
+            
         </script>
     </body>
 </html>
