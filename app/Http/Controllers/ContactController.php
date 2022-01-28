@@ -6,10 +6,11 @@ use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Flasher\Prime\FlasherInterface;
 
 class ContactController extends Controller
 {
-    public function listingInquiry(Request $request, $id)
+    public function listingInquiry(Request $request, $id, FlasherInterface $flasher)
     {
         $request->validate([
            'name' => ['required', 'max:255'],
@@ -27,6 +28,7 @@ class ContactController extends Controller
 
         Mail::send(new ContactMail($contact));
 
-        return redirect(route('all-listings.show', $id))->with('message', 'Message Send Successfully!');
+        $flasher->addInfo('Mail send Successfully!');
+        return redirect(route('all-listings.show', $id));
     }
 }

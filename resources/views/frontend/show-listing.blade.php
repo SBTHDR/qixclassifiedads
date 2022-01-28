@@ -42,4 +42,5 @@
           </section>
     </section>
     <x-main-footer></x-main-footer>
+    @flasher_render
 </x-main-layout>
